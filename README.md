@@ -1,5 +1,6 @@
 # Kiss-Skins
 Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「Kiss」シリーズ。
+
 各ディレクトリにファイルを置いています。
 
 # ラインナップ（全10種）
@@ -21,7 +22,8 @@ Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 
 
 ## Kiss-Blue
-![ここには代替テキスト。右には画像URL](https://kaiunillust.com/wp-content/uploads/2018/07/turineko.jpg)
+青色を基調としたスキン
+![Kiss-Blueサンプル](thumbnails/Screen-Shot-Kiss-Blue.png)
 
 ## Kiss-Yellow
 
