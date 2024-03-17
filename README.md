@@ -2,7 +2,7 @@
 Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「Kiss」シリーズ。
 各ディレクトリにファイルを置いています。
 
-# ラインナップ（全１種）
+# ラインナップ（全10種）
 - Kiss-Blue
 - 
 - Kiss-Red(#db1d1d)
