@@ -1,0 +1,2709 @@
+@charset "UTF-8";
+
+/*
+Skin Name: Kiss-Blue
+Description: シンプルながらも、オシャレで機能的なデザインを追求しました。
+Skin URI: https://wp-cocoon.com/
+Author: みむねこ
+Author URI: https://nelog.jp/
+Screenshot URI: https://mimneko.github.io/note/img/Screen-Shot-Kiss-Blue.png
+Version: 1.0.0
+Priority: 7000000000
+*/
+
+/*
+
+Red(#db1d1d)、Green(#226b07)、Blue(#144999)、Yellow(#ffa621)、Purple(#71188f)、
+Pink(#fe6aa2)、Orange(#e86b16)、Brown(#780b0b)、Gray(#6e6e6e)、Black(#333)
+ダークモード対応
+
+フロントページのレスポンシブ：見出しの距離
+マーカー色
+notice-area
+ダークモードのモバイルメニュー
+目次はレベルごとにデザインを変える
+SimpleDarkModeを参考に
+
+#submit:hover調整
+検索ボックス:hover
+:hoverを.blogcard-wrap:hoverのように、opacityで設定
+
+*/
+
+:root {
+  
+  /* 英字フォント部分の日本語(Webフォントが当たらなかった場合のデフォルト */
+  --skin-grayish-default-font: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+
+  --main-color: #144999;
+  --main-color-border-light: #7a87b0;/*#85aff3;*/
+  --main-color-light: #f2f5fc;
+  
+  --quote-text: #5d627b;
+  --quote-double-quotation: #7A87B0;
+  --quote-cite: #808080;
+  --nt-area-color: #4cae4c;
+  --nt-area-warning-color: #f7ab00;
+  --nt-area-danger-color: #f66;
+
+  --main-color-hover: rgba(255,255,255,.25);
+  --main-color-border: var(--main-color);
+  --toc-border: #f4f6f9;
+  --toc-shadow: #eee;
+  --mount: #e6e6e6;
+  --background: #fff;
+  --text-color-black: #333;
+  --text-color-gray: #6b6b6b;
+  --text-color-white: #fff;
+}
+
+/* おためし */
+:root {
+  --abcLtGray_T0: #A5A4A3;
+  --abcLtGray_T30: #C0BFBF;
+  --abcLtGray_T70: #E4E4E3;
+  --abcLtGray_T90: #f6f6f6;
+  --abcLtBlue_T0: #AAC2D2;
+  --abcLtBlue_S30: #778893;
+  --abcLtBlue_T50: #D5E1E9;
+  --abcLtBlue_T70: #E6EDF2;
+  --abcBlk_Red_T0: #d95959;
+  --abcBlk_Beige_T70: #f6f1ee;
+  --abcBlk_Yellow_T0: #dedbbf;
+  --abcBlk_Yellow_T50: #efeddf;
+  --abcBlk_Pink_T0: #debfc2;
+  --abcBlk_Pink_T50: #efdfe1;
+  --abcBlk_Green_T0: #cddab9;
+  --abcBlk_Green_T50: #e6eddc;
+  --iconbox-background: var(--abcLtGray_T90);
+  --iconbox-information: var(--abcLtBlue_T0);
+  --iconbox-question: var(--abcBlk_Yellow_T0);
+  --iconbox-exclamation: var(--abcBlk_Pink_T0);
+  --iconbox-memo: var(--abcBlk_Green_T0);
+  --iconbox-comment: var(--abcLtGray_T0);
+  --iconbox-ok: var(--abcLtBlue_S30);
+  --iconbox-ng: var(--abcBlk_Red_T0);
+  --guidancebox-primary: var(--abcLtBlue_T70);
+  --guidancebox-secondary: var(--abcLtGray_T70);
+  --guidancebox-information: var(--abcLtBlue_T50);
+  --guidancebox-success: var(--abcBlk_Green_T50);
+  --guidancebox-warning: var(--abcBlk_Yellow_T50);
+  --guidancebox-danger: var(--abcBlk_Pink_T50);
+  --guidancebox-light: var(--abcBlk_Beige_T70);
+  --guidancebox-dark: var(--abcLtGray_T30);
+  --sticky-gray-headline: var(--abcLtGray_T0);
+  --sticky-gray-background: var(--abcLtGray_T70);
+  --sticky-yellow-headline: var(--abcBlk_Yellow_T0);
+  --sticky-yellow-background: var(--abcBlk_Yellow_T50);
+  --sticky-pink-headline: var(--abcBlk_Pink_T0);
+  --sticky-pink-background: var(--abcBlk_Pink_T50);
+  --sticky-blue-headline: var(--abcLtBlue_T0);
+  --sticky-blue-background: var(--abcLtBlue_T50);
+  --sticky-green-headline: var(--abcBlk_Green_T0);
+  --sticky-green-background: var(--abcBlk_Green_T50);
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --main-color: #0c3064;
+    --main-color-light: #191919;/*transparent;*/
+    
+    --toc-shadow: none;
+    --mount: #000;
+    --background: #222;
+    --text-color-black: #fcfcfc;
+    --text-color-gray: #6b6b6b;
+    --text-color-white: #fff;
+
+    --iconbox-background: var(--background);
+    /*--cocoon-custom-text-color: green;*/
+  }
+}
+
+/***********************************************************
+  ヘッダー
+***********************************************************/
+#header {
+  background-color: var(--main-color);
+  color: var(--text-color-white);
+}
+
+.logo .site-name-text-link {
+  color: var(--text-color-white);
+}
+
+.logo .site-name-text-link:hover {
+  color: var(--main-color-light);
+}
+
+/***********************************************************
+  グローバルメニュー
+***********************************************************/
+#navi .navi-in>.menu-header .sub-menu,
+.header-container .navi,
+.header-container.fixed-header,
+#navi .navi-in a {
+  background-color: var(--main-color);
+  color: var(--text-color-white);
+}
+
+.header-container{
+  box-shadow: 0 6px 5px -3px rgba(0,0,0,.24),
+              0 6px 10px -3px rgba(0,0,0,.18);
+}
+
+#navi .navi-in a:hover {
+  background-color: var(--main-color-hover)!important;
+  transition: .5s;
+}
+
+/***********************************************************
+  通知
+***********************************************************/
+.notice-area {
+  color: var(--background);
+  text-align: center;
+  background-color: var(--nt-area-color);
+  padding: .6em;
+  font-size: .8em;
+}
+
+.nt-warning {
+  background-color: var(--nt-area-warning-color);
+}
+
+.nt-danger {
+  background-color: var(--nt-area-danger-color);
+}
+
+/***********************************************************
+  メインカラム、サイドバー
+***********************************************************/
+body {
+  background-color: var(--mount);
+  color: var(--text-color-black)!important;
+}
+
+#main,
+#sidebar,
+input {
+  background-color: var(--background);
+}
+
+.main,
+.sidebar,
+.carousel-in,
+.sbp-main-before,
+.sbp-footer-before,
+.pbp-main-before,
+.pbp-footer-before {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),
+              0 0 0 1px rgba(0,0,0,.08);
+}
+
+/***********************************************************
+  フッター
+***********************************************************/
+#footer,
+#footer a,
+.footer-title {
+  background-color: var(--main-color)!important;
+  color: var(--text-color-white)!important;
+}
+
+.footer-bottom {
+  margin: 24px 0;
+}
+
+#footer a:hover {
+  background-color: var(--main-color-hover)!important;
+  transition: .5s;
+}
+
+.copyright {
+  margin-top: 28px;
+}
+
+/***********************************************************
+  エントリーカード
+***********************************************************/
+.a-wrap {
+  background-color: var(--main-color-light);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.a-wrap:hover {
+  background-color: var(--main-color-light);
+}
+
+/***********************************************************
+  サイトロゴ
+***********************************************************/
+.logo-text {
+  padding: 30px 0;
+}
+
+/***********************************************************
+  目次
+***********************************************************/
+.toc-content ol {
+  list-style: disc
+}
+.toc a:hover {
+  text-decoration: none;
+  background-color: var(--main-color-light);
+}
+
+/*  サイドバー  */
+.article .toc-title {
+  font-size: 120%;
+  border-radius: 4px;
+  background-color: var(--main-color-light);
+}
+
+.article .toc {
+  margin: 15px auto;
+  min-width: 50%;
+  max-width: 95%;
+  position: relative;
+  border: solid 2px var(--toc-border);
+  border-radius: 4px;
+  background-color: var(--background);
+  box-shadow: 0 0 3px 2px var(--toc-shadow);
+}
+
+.toc-content {
+  padding-left: .4em;
+}
+
+/*  サイドバー  */
+.nwa .toc {
+  padding: 1em 1.6em;
+  margin: 15px auto;
+  width: calc(100% - 4px);
+  position: relative;
+  border: solid 2px var(--toc-border);
+  border-radius: 4px;
+  background-color: var(--background);
+  box-shadow: 0 0 3px 2px var(--toc-shadow);
+}
+
+.nwa .toc {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.nwa .toc {
+  font-size: 1em;
+}
+
+.nwa .toc-title {
+  background: none;
+  font-size: 1.17em;
+  border-top: none;
+  border-bottom: solid 3px var(--main-color-border);
+  border-radius: 2px;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 4px 10px;
+  position: relative;
+  font-weight: bold;
+  text-align: left;
+}
+.nwa .toc-content {
+  padding-top: 0!important;
+  font-size: .9em;
+}
+.nwa ol {
+  padding-left: 1.4em;
+}
+
+.toc a {
+  color: var(--text-color-black);
+}
+
+/***********************************************************
+  見出し
+***********************************************************/
+.entry-title {
+  font-size: 30px;
+}
+
+/***********************************************************
+  見出し（h2）
+***********************************************************/
+.article h2 {
+  font-size: 24px;
+  padding: 12px;
+  padding-top: 16px;
+  background-color: var(--main-color-light);
+  border-top: 2px solid var(--main-color-border);
+  border-bottom: 2px solid var(--main-color-border);
+}
+
+/***********************************************************
+  見出し（h3,4）
+***********************************************************/
+.article h3,
+.article h4 {
+  font-size: 24px;
+  margin-top: 40px;
+  padding: 6px 0 2px 12px;
+  border: none;
+  position: relative;
+}
+
+.article h3 {
+  border-bottom: solid 3px var(--main-color-border);
+}
+
+.article h4 {
+  border-bottom: dotted 3px var(--main-color-border);
+}
+
+/***********************************************************
+  見出し（h5）
+***********************************************************/
+.article h5 {
+  font-size: 24px;
+  border: none;
+  position: relative;
+  padding: 0 0 2px 12px;
+  border-bottom: 1px solid var(--main-color-border);
+}
+
+/***********************************************************
+  見出し（h6）
+***********************************************************/
+.article h6 {
+  font-size: 24px;
+  padding: 0 0 2px 12px;
+  border:none;
+  border-bottom: 1px solid var(--main-color-border);
+}
+
+/***********************************************************
+  サイドバーの見出し
+***********************************************************/
+.sidebar h2,
+.sidebar h3 {
+  background: none;
+  padding: 4px 10px;
+  position: relative;
+  border: none;
+  border-bottom: solid 3px var(--main-color-border);
+}
+
+
+/***********************************************************
+  表
+***********************************************************/
+/*  見出し  */
+table th, .scrollable-table th {
+  background-color: var(--main-color);
+  color: var(--text-color-white);
+}
+
+/*  ゼブラ  */
+table tr:nth-of-type(2n+1) {
+  background-color: var(--main-color-light);
+}
+
+/***********************************************************
+  入力ボックス
+***********************************************************/
+input[type='submit'] {
+  font-size: 22px;
+}
+
+/***********************************************************
+  ウィジェット
+***********************************************************/
+/*  エントリーカード、コメント  */
+.widget-entry-cards .a-wrap,
+.recent-comments .a-wrap {
+  margin-bottom: 10px;
+}
+
+.recent-comment-content {
+  background-color: var(--background);
+}
+
+.cf::after {
+  background-color: var(--background);
+}
+
+/*  境界線  */
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a,
+.widget_pages ul li a,
+.widget_meta ul li a,
+.widget_rss ul li a,
+.widget_nav_menu ul li a {
+  border-bottom: 1px solid var(--cocoon-basic-border-color);
+  transition-duration: .2s;
+}
+
+.widget_recent_entries ul li a,
+.widget_categories ul li a,
+.widget_archive ul li a {
+  padding: 7px 0 5px 0;
+}
+
+/***********************************************************
+  先頭へ戻るボタン
+***********************************************************/
+.go-to-top-button{
+  background-color: var(--background);
+  color: var(--text-color-gray);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.go-to-top-button:hover{
+  background-color: var(--background);
+  color: var(--text-color-gray);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/***********************************************************
+  カテゴリなどの数
+***********************************************************/
+.widget_recent_entries ul li a .post-count,
+.widget_categories ul li a .post-count,
+.widget_archive ul li a .post-count,
+.widget_pages ul li a .post-count,
+.widget_meta ul li a .post-count,
+.widget_rss ul li a .post-count,
+.widget_nav_menu ul li a .post-count {
+  font-style: normal;
+  font-size: 90%;
+  margin-right: 16px;
+  margin-top: 3px;
+}
+
+/***********************************************************
+  サイドバー　カテゴリ
+***********************************************************/
+/*
+.cat-item a::before {
+  font-family: FontAwesome;
+  content: '\f054';
+  color: rgba(50,97,171,.6);
+  margin: 0 8px 0 16px;
+}
+*/
+.cat-item a::before{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+  content: "\f07b";
+  color: var(--text-color-gray);
+  margin: 0 8px 0 16px;
+}
+
+.cat-item .children a::before {
+  font-weight: 400;
+}
+
+/***********************************************************
+  ラベルボックス
+***********************************************************/
+.label-box-label {
+  margin-left: 1em;
+  padding: 0 .8em;
+  font-size: 16px;
+  font-weight: normal;
+  text-shadow: 
+    var(--background) 3px 0 0,
+    var(--background) 2px 1px 0,
+    var(--background) 2px 2px 0,
+    var(--background) 2px 3px 0,
+    var(--background) 1px 3px 0,
+    var(--background) 0 3px 0,
+    var(--background) -1px 3px 0,
+    var(--background) -2px 2px 0,
+    var(--background) -3px 1px 0,
+    var(--background) -3px 0 0,
+    var(--background) -3px -1px 0,
+    var(--background) -3px -2px 0,
+    var(--background) -2px -2px 0,
+    var(--background) -1px -3px 0,
+    var(--background) 0 -3px 0,
+    var(--background) 1px -3px 0,
+    var(--background) 2px -2px 0,
+    var(--background) 2px -2px 0,
+    var(--background) 3px -1px 0;
+}
+
+.label-box.not-nested-style:not(.has-border-color)>.box-content,
+.label-box>.label-box-content {
+  border-radius: 0;
+  border: 1px solid var(--cocoon-basic-border-color);
+}
+
+.label-box-content {
+  padding-top: 12px;
+}
+
+.label-box-label,
+.label-box {
+  color: var(--text-color-black);
+}
+
+/***********************************************************
+  サイドバー　タグ一覧
+***********************************************************/
+.tagcloud a {
+  padding: 6px 8px 3px 8px;
+  background-color: var(--background);
+}
+
+.fa-tag:before {
+  color: var(--text-color-gray);
+}
+
+/***********************************************************
+  SNS
+***********************************************************/
+.article-footer,
+.entry-footer {
+	margin-right: -30px;
+	margin-left: -30px;
+	padding: 20px 30px;
+	background-color: var(--mount);
+}
+
+@media screen and (max-width: 834px){
+  .article-footer,
+  .entry-footer {
+    margin-right: -16px;
+    margin-left: -16px;
+    padding: 20px 16px;
+  }
+}
+
+.sns-share-message,
+.sns-follow-message {
+	margin: 0;
+}
+
+.sns-follow-message {
+	margin-top: 15px;
+}
+
+.sns-share-buttons a,
+.sns-follow-buttons a,
+.sidebar .sns-follow-buttons a,
+.footer .sns-follow-buttons a {
+	width: 34px !important;
+	height: 34px;
+	margin: 4px;
+}
+
+.article-header .sns-share-buttons {
+  margin-bottom: 10px;
+}
+
+.sns-share-buttons a:hover,
+.sns-follow-buttons a:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.sns-share-buttons a span.social-icon {
+	padding-top: 0;
+	font-size: 20px !important;
+}
+
+.sns-follow-buttons a {
+	font-size: 28px !important;
+}
+
+.ss-top .sns-share-buttons,
+.ss-bottom .sns-share-buttons,
+.sns-follow-buttons,
+.sidebar .sns-follow-buttons,
+.footer .sns-follow-buttons {
+	justify-content: center;
+}
+
+.button-caption,
+.share-count {
+	display: none !important;
+}
+
+/***********************************************************
+  ページネーション
+***********************************************************/
+/*  ページ番号のボーダー  */
+.page-numbers {
+  border-radius: 5px;
+  border: 2px solid var(--cocoon-x-thin-color)!important;
+  transition: .4s;
+}
+
+.pagination a:hover,
+.pagination a:focus, 
+.pagination a:active {
+  transform: scale(1.2);
+  transition: .4s;
+}
+
+/*  カレントページ  */
+.pagination .current{
+  color: var(--text-color-white);
+  background-color: var(--main-color-border);
+  font-size: 140%;
+}
+
+/*  次のページへリンク他  */
+.comment-btn,
+input[type='submit']  {
+  border: 1px solid var(--main-color-border-light);
+  background-color: var(--main-color-light);
+  border-radius: 4px;
+  transition: .4s;
+}
+
+.pagination a:hover,
+.comment-btn:hover,
+input[type='submit']:hover  {
+  background-color: var(--background);
+}
+
+/* 「次のページへ」 */
+.pagination-next {
+  display: none;
+}
+
+.page-numbers .fa-angle-left,
+.page-numbers .fa-angle-right {
+  margin-top: -2px;
+}
+
+/***********************************************************
+  関連記事
+***********************************************************/
+.related-entry-heading,
+.comment-title {
+	text-align: center;
+	letter-spacing: .5em;
+	border-top: 2px solid var(--main-color);
+	border-bottom: 2px solid var(--main-color);
+  background-color: var(--main-color-light);
+  padding-top: 5px;
+  padding-left: .5em;
+}
+
+.related-entries {
+  margin-bottom: 0!important;
+}
+
+.post-navi-default.post-navi-border .next-post {
+  border-top-width: 1px;
+}
+
+.under-entry-content .related-list {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.under-entry-content .related-list .related-entry-card-wrap {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 28.5%;
+  border: none;
+  margin-bottom: 1%;
+}
+
+.under-entry-content .related-entry-heading .sub-caption {
+  padding-left: .65em;
+}
+
+.under-entry-content .rect-vertical-card .related-entry-card-title {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.under-entry-content .rect-vertical-card .related-entry-card-snippet {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.under-entry-content .rect-vertical-card .related-entry-card-meta {
+  position: static;
+  font-size: 12px;
+}
+
+.related-entry-card-content, .entry-card-content {
+  padding-bottom: 0;
+}
+
+/***********************************************************
+  前後記事
+***********************************************************/
+.pager-post-navi a .iconfont {
+  color: var(--text-color-gray);
+}
+
+.pager-post-navi .card-thumb img {
+	vertical-align: bottom;
+}
+
+@media screen and (min-width: 601px) {
+  .pager-post-navi {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+    padding: 3% 0;
+    margin: 40px 0 20px 0!important;
+  }
+
+  .pager-post-navi a.prev-post,
+  .pager-post-navi a.next-post {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pager-post-navi {
+    border-top: 1px solid var(--cocoon-basic-border-color);
+    border-bottom: 1px solid var(--cocoon-basic-border-color);
+  }
+
+  .pager-post-navi a.prev-post,
+  .pager-post-navi a.next-post {
+    border: none!important;
+  }
+}
+
+.pager-post-navi::after {
+  display: none;
+}
+
+
+/***********************************************************
+  ランキング
+***********************************************************/
+/* 元の王冠消す */
+.item-ranking-box [class*="-crown"]::after,
+.ranking-box [class*="-crown"]::after,
+.ranking-items [class*="-crown"]::after {
+  display: none;
+}
+.item-ranking-box [class*="-crown"],
+.ranking-box [class*="-crown"],
+.ranking-items [class*="-crown"] {
+  border-bottom: 0;
+}
+
+.item-ranking-box :is(.g-crown, .s-crown, .c-crown)::before,
+.ranking-box :where(.g-crown, .s-crown, .c-crown)::before,
+.ranking-items :where(.g-crown, .s-crown, .c-crown)::before {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url(images/svg-icon/crown.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  z-index: 1;
+}
+
+:where(.ranking-box, .item-ranking-box, .ranking-items) .g-crown::before {
+  -webkit-filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
+  filter: invert(57%) sepia(99%) saturate(294%) hue-rotate(13deg) brightness(95%) contrast(97%);
+}
+
+:where(.ranking-box, .item-ranking-box, .ranking-items) .s-crown::before {
+  -webkit-filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
+  filter: invert(70%) sepia(0%) saturate(2434%) hue-rotate(319deg) brightness(82%) contrast(87%);
+}
+
+:where(.ranking-box, .item-ranking-box, .ranking-items) .c-crown::before {
+  -webkit-filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
+  filter: invert(27%) sepia(30%) saturate(569%) hue-rotate(318deg) brightness(96%) contrast(92%);
+}
+
+.item-ranking-box :where(.g-crown, .s-crown, .c-crown),
+.ranking-box :where(.g-crown, .s-crown, .c-crown),
+.ranking-items :where(.g-crown, .s-crown, .c-crown) {
+  border-left: none;
+}
+
+.item-ranking-box :where(.g-crown-circle, .s-crown-circle, .c-crown-circle),
+.ranking-box :where(.g-crown-circle, .s-crown-circle, .c-crown-circle),
+.ranking-items :where(.g-crown-circle, .s-crown-circle, .c-crown-circle) {
+  display: none;
+}
+
+.ranking-item, .timeline-box {
+  border: 1px solid var(--cocoon-basic-border-color);
+}
+
+.ranking-item-name-crown {
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+/***********************************************************
+  アイコンボックス
+***********************************************************/
+:is(.is-style-information-box, .information-box, .information),
+:is(.is-style-question-box, .question-box, .question),
+:is(.is-style-alert-box, .alert-box, .alert),
+:is(.is-style-memo-box, .memo-box),
+:is(.is-style-comment-box, .comment-box),
+:is(.is-style-ok-box, .ok-box),
+:is(.is-style-good-box, .good-box),
+:is(.is-style-ng-box, .ng-box),
+:is(.is-style-bad-box, .bad-box),
+:is(.is-style-profile-box, .profile-box) {
+  border-radius: 0;
+  background-color: var(--iconbox-background);
+  padding: 24px 20px !important;
+}
+
+:is(.is-style-information-box, .information-box, .information)::before,
+:is(.is-style-question-box, .question-box, .question)::before,
+:is(.is-style-alert-box, .alert-box, .alert)::before,
+:is(.is-style-memo-box, .memo-box)::before,
+:is(.is-style-comment-box, .comment-box)::before,
+:is(.is-style-ok-box, .ok-box)::before,
+:is(.is-style-good-box, .good-box)::before,
+:is(.is-style-ng-box, .ng-box)::before,
+:is(.is-style-bad-box, .bad-box)::before,
+:is(.is-style-profile-box, .profile-box)::before {
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 0;
+  background-color: var(--background);
+  border-right: none;
+  border-radius: 99%;
+  width: 1.5em;
+  height: 1.5em;
+  top: -5px;
+  left: 0.5em;
+  padding-right: 0;
+  pointer-events: none;
+}
+
+/* 補足情報(i) */
+:is(.is-style-information-box, .information-box, .information) {
+  border: 1px solid var(--iconbox-information);
+}
+
+:is(.is-style-information-box, .information-box, .information)::before {
+  color: var(--iconbox-information);
+}
+
+/* 補足情報(?) */
+:is(.is-style-question-box, .question-box, .question) {
+  border: 1px solid var(--iconbox-question);
+}
+
+:is(.is-style-question-box, .question-box, .question)::before {
+  color: var(--iconbox-question);
+}
+
+/* 補足情報(!) */
+:is(.is-style-alert-box, .alert-box, .alert) {
+  border: 1px solid var(--iconbox-exclamation);
+}
+
+:is(.is-style-alert-box, .alert-box, .alert)::before {
+  color: var(--iconbox-exclamation);
+}
+
+/* メモ */
+:is(.is-style-memo-box, .memo-box) {
+  border: 1px solid var(--iconbox-memo);
+}
+
+:is(.is-style-memo-box, .memo-box)::before {
+  color: var(--iconbox-memo);
+}
+
+/* コメント */
+:is(.is-style-comment-box, .comment-box) {
+  border: 1px solid var(--iconbox-comment);
+}
+
+:is(.is-style-comment-box, .comment-box)::before {
+  color: var(--iconbox-comment);
+}
+
+/* OK & GOOD & プロフィール */
+:is(.is-style-ok-box, .ok-box),
+:is(.is-style-good-box, .good-box),
+:is(.is-style-profile-box, .profile-box) {
+  border: 1px solid var(--iconbox-ok);
+}
+
+:is(.is-style-ok-box, .ok-box)::before,
+:is(.is-style-good-box, .good-box)::before,
+:is(.is-style-profile-box, .profile-box)::before {
+  color: var(--iconbox-ok);
+}
+
+/* NG & BAD */
+:is(.is-style-ng-box, .ng-box),
+:is(.is-style-bad-box, .bad-box) {
+  border: 1px solid var(--iconbox-ng);
+}
+
+:is(.is-style-ng-box, .ng-box)::before,
+:is(.is-style-bad-box, .bad-box)::before {
+  color: var(--iconbox-ng);
+}
+
+/***********************************************************
+  案内ボックス
+***********************************************************/
+:is(.is-style-primary-box, .primary-box, .sp-primary, .primary),
+:is(.is-style-secondary-box, .secondary-box),
+:is(.is-style-info-box, .info-box, .sp-info, .info),
+:is(.is-style-success-box, .success-box, .sp-success, .success),
+:is(.is-style-warning-box, .warning-box, .sp-warning, .warning),
+:is(.is-style-danger-box, .danger-box, .sp-danger, .danger),
+:is(.is-style-light-box, .light-box),
+:is(.is-style-dark-box, .dark-box) {
+  border-color: transparent;
+  border-radius: 0;
+  color: var(--text-color-black);
+}
+
+:is(.is-style-primary-box, .primary-box, .sp-primary, .primary) {
+  background-color: var(--guidancebox-primary);
+}
+
+:is(.is-style-secondary-box, .secondary-box) {
+  background-color: var(--guidancebox-secondary);
+}
+
+:is(.is-style-info-box, .info-box, .sp-info, .info) {
+  background-color: var(--guidancebox-information);
+}
+
+:is(.is-style-success-box, .success-box, .sp-success, .success) {
+  background-color: var(--guidancebox-success);
+}
+
+:is(.is-style-warning-box, .warning-box, .sp-warning, .warning) {
+  background-color: var(--guidancebox-warning);
+}
+
+:is(.is-style-danger-box, .danger-box, .sp-danger, .danger) {
+  background-color: var(--guidancebox-danger);
+}
+
+:is(.is-style-light-box, .light-box) {
+  background-color: var(--guidancebox-light);
+}
+
+:is(.is-style-dark-box, .dark-box) {
+  background-color: var(--guidancebox-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :is(.is-style-primary-box, .primary-box, .sp-primary, .primary) {
+    border: 2px solid var(--guidancebox-primary);
+    margin-left: -2px;
+    background-color: var(--background);
+  }
+  
+  :is(.is-style-secondary-box, .secondary-box) {
+    border: 2px solid var(--guidancebox-secondary);
+    margin-left: -2px;
+    background-color: var(--background);
+  }
+  
+  :is(.is-style-info-box, .info-box, .sp-info, .info) {
+    border: 2px solid var(--guidancebox-information);
+    margin-left: -2px;
+    background-color: var(--background);
+  }
+  
+  :is(.is-style-success-box, .success-box, .sp-success, .success) {
+    border: 2px solid var(--guidancebox-success);
+    margin-left: -2px;
+    background-color: var(--background);
+  }
+  
+  :is(.is-style-warning-box, .warning-box, .sp-warning, .warning) {
+    border: 2px solid var(--guidancebox-warning);
+    margin-left: -2px;
+    background-color: var(--background);
+  }
+  
+  :is(.is-style-danger-box, .danger-box, .sp-danger, .danger) {
+    border: 2px solid var(--guidancebox-danger);
+    margin-left: -2px;
+    background-color: var(--background);
+  }
+  
+  :is(.is-style-light-box, .light-box) {
+    border: 2px solid var(--guidancebox-light);
+    margin-left: -2px;
+    background-color: var(--background);
+  }
+  
+  :is(.is-style-dark-box, .dark-box) {
+    border: 2px solid var(--guidancebox-dark);
+    margin-left: -2px;
+    background-color: var(--background);
+  }
+}
+
+/***********************************************************
+  付箋風ボックス
+***********************************************************/
+:is([class*="is-style-sticky-"], .blank-box.sticky) {
+  border-width: 0 0 0 0;
+  border-color: unset;
+  border-left: solid 6px var(--sticky-gray-headline);
+  background-color: var(--sticky-gray-background);
+  padding: 1.2em 1.6em;
+  position: relative;
+}
+
+:is([class*="is-style-sticky-"], .blank-box.sticky)::before {
+  display: block;
+  content: "";
+  background-color: var(--background);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+:is(.is-style-sticky-yellow, .blank-box.sticky.st-yellow) {
+  border-left: solid 6px var(--sticky-yellow-headline);
+  background-color: var(--sticky-yellow-background);
+}
+
+:is(.is-style-sticky-red, .blank-box.sticky.st-red) {
+  border-left: solid 6px var(--sticky-pink-headline);
+  background-color: var(--sticky-pink-background);
+}
+
+:is(.is-style-sticky-blue, .blank-box.sticky.st-blue) {
+  border-left: solid 6px var(--sticky-blue-headline);
+  background-color: var(--sticky-blue-background);
+}
+
+:is(.is-style-sticky-green, .blank-box.sticky.st-green) {
+  border-left: solid 6px var(--sticky-green-headline);
+  background-color: var(--sticky-green-background);
+}
+
+@media (prefers-color-scheme: dark) {
+  :is([class*="is-style-sticky-"], .blank-box.sticky) p {
+    margin-left: -4px;
+  }
+
+  :is([class*="is-style-sticky-"], .blank-box.sticky) {
+    background-color: var(--background);
+    border-left: solid 10px var(--sticky-gray-headline);
+    border-top: solid 2px var(--sticky-gray-background);
+    border-right: solid 2px var(--sticky-gray-background);
+    border-bottom: solid 2px var(--sticky-gray-background);
+  }
+
+  :is(.is-style-sticky-yellow, .blank-box.sticky.st-yellow) {
+    background-color: var(--background);
+    border-left: solid 10px var(--sticky-yellow-headline);
+    border-top: solid 2px var(--sticky-yellow-background);
+    border-right: solid 2px var(--sticky-yellow-background);
+    border-bottom: solid 2px var(--sticky-yellow-background);
+  }
+  
+  :is(.is-style-sticky-red, .blank-box.sticky.st-red) {
+    background-color: var(--background);
+    border-left: solid 10px var(--sticky-pink-headline);
+    border-top: solid 2px var(--sticky-pink-background);
+    border-right: solid 2px var(--sticky-pink-background);
+    border-bottom: solid 2px var(--sticky-pink-background);
+  }
+  
+  :is(.is-style-sticky-blue, .blank-box.sticky.st-blue) {
+    background-color: var(--background);
+    border-left: solid 10px var(--sticky-blue-headline);
+    border-top: solid 2px var(--sticky-blue-background);
+    border-right: solid 2px var(--sticky-blue-background);
+    border-bottom: solid 2px var(--sticky-blue-background);
+  }
+  
+  :is(.is-style-sticky-green, .blank-box.sticky.st-green) {
+    background-color: var(--background);
+    border-left: solid 10px var(--sticky-green-headline);
+    border-top: solid 2px var(--sticky-green-background);
+    border-right: solid 2px var(--sticky-green-background);
+    border-bottom: solid 2px var(--sticky-green-background);
+  }
+}
+
+/***********************************************************
+  タブボックス
+***********************************************************/
+.blank-box.bb-tab,
+.tab-caption-box-content {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0;
+  border-color: var(--cocoon-basic-border-color);
+  padding: 3em 1em 1.4em;
+}
+
+.tab-caption-box {
+  position: relative;
+}
+
+.blank-box.bb-tab .bb-label {
+  background-color: var(--main-color);
+  position: absolute;
+  font-size: 12px;
+  top: 0;
+  line-height: 1.8;
+  color: var(--cocoon-white-color);
+  left: 0;
+  border-radius: 0;
+  padding: .2em 1em .2em .8em;
+}
+
+.tab-caption-box-label {
+  display: block;
+  color: var(--text-color-white);
+  border-radius: 0;
+  background-color: var(--main-color);
+  padding: .3em .8em .2em .8em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/***********************************************************
+  FAQ
+***********************************************************/
+.faq .faq-item .faq-question-content {
+  padding-top: 6px;
+}
+
+.faq .faq-item .faq-answer-content {
+  padding-top: 3px;
+}
+
+/***********************************************************
+  アイコンリスト
+***********************************************************/
+.iconlist-box {
+  border: 1px solid var(--cocoon-basic-border-color);
+}
+
+.iconlist-box li::before {
+  margin-top: -2px;
+}
+
+/***********************************************************
+  コメント
+***********************************************************/
+.comment-reply-link {
+  border: 0;
+  margin-right: 0;
+}
+
+#submit,
+#comment-reply-btn {
+  border-color: var(--main-color);
+  background-color: var(--background);
+}
+
+#submit:hover,
+#comment-reply-btn:hover {
+  background-color: var(--main-color-light);
+  color: var(--text-color-black);
+}
+
+/***********************************************************
+  引用
+***********************************************************/
+blockquote{
+  position: relative;
+  background-color: var(--background);
+  border-top: 1px solid var(--main-color-border-light);
+  border-bottom: 1px solid var(--main-color-border-light);
+  padding: 10px;
+  padding-top: 20px;
+}
+
+blockquote:before{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: '\f10d';
+  background-color: var(--background);
+  color: var(--quote-double-quotation);
+  position: absolute;
+  line-height: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  top: -20px;
+  left: -10px;
+}
+
+blockquote:after{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: '\f10e';
+  background-color: var(--background);
+  color: var(--quote-double-quotation);
+  position: absolute;
+  line-height: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  right: -10px;
+  bottom:-20px;
+}
+
+blockquote cite {
+  display: block;
+  padding-right: 30px;
+  font-size: .8rem;
+  text-align: right;
+  color: var(--quote-cite);
+}
+
+/***********************************************************
+  アコーディオン
+***********************************************************/
+.toggle-button {
+  color: var(--text-color-black);
+  padding: 8px 10px;
+  border: solid 1px var(--main-color-border);
+  border-radius: 0;
+  background-color: var(--main-color-light);
+}
+
+.toggle-button::before {
+  display: inline-block;
+  content: "\f078";
+  color: currentColor;
+  opacity: 1;
+}
+
+.toggle-box .toggle-checkbox:checked~.toggle-button:before {
+  content: "\f077";
+}
+
+.toggle-box .toggle-checkbox:checked~.toggle-content {
+  border-width: 1px;
+  border-top: none;
+}
+
+/* importantをつけると、ダークモードにも色を変えられなくなるがダークモード対応 */
+.toggle-content {
+  color: var(--text-color-black);
+  background-color: var(--background);
+}
+
+/***********************************************************
+  検索ボックス
+***********************************************************/
+div.search-form {
+  padding-bottom: 3em;
+}
+
+.search-form>div {
+  border: 1px solid var(--cocoon-basic-border-color);
+  border-radius: 0;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.search-form div.sform {
+  padding: 8px 12px 5px 12px;
+  background-color: var(--background);
+  color: var(--text-color-black);
+}
+
+.search-form div.sbtn {
+  background-color: var(--main-color);
+  color: var(--text-color-white);
+}
+
+.search-form div.sbtn:hover {
+  background-color: var(--main-color);
+  color: var(--main-color-light);
+  transition: .4s;
+  border: 1px solid var(--cocoon-basic-border-color);
+}
+
+.search-form div.sbtn::after {
+  display: none;
+}
+
+/***********************************************************
+  ボックスメニュー
+***********************************************************/
+.box-menu {
+  background-color: var(--background);
+}
+
+.box-menu:hover {
+  color: var(--text-color-black);
+  background-color: var(--main-color-light);
+  box-shadow: inset 1px 1px 0 0 var(--cocoon-basic-border-color), 
+                    1px 1px 0 0 var(--cocoon-basic-border-color), 
+                    1px 0 0 0 var(--cocoon-basic-border-color)!important;
+}
+
+.box-menu:hover::before {
+  opacity: 1;
+}
+
+/* Box Menu アイコン使用 */
+.box-menu .box-menu-icon {
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+.box-menu-icon img {
+  max-height: 30px;
+}
+
+/* Cocoonブロック　Box Menu アイコン&画像 */
+.box-menu-box .box-menu .box-menu-icon * {
+  margin: 10px 0;
+}
+
+/***********************************************************
+  他
+***********************************************************/
+.cat-link {
+  padding: 5px 6px 2px 6px;
+  color: var(--text-color-white);
+}
+
+.tag-link,
+.comment-reply-link {
+  padding: 3px 5px 1px 5px;
+  background-color: var(--background);
+}
+
+.widget_recent_entries ul li a:hover, 
+.widget_categories ul li a:hover, 
+.widget_archive ul li a:hover, 
+.widget_pages ul li a:hover, 
+.widget_meta ul li a:hover, 
+.widget_rss ul li a:hover, 
+.widget_nav_menu ul li a:hover, 
+.widget_block ul li a:hover,
+.tagcloud a:hover,
+.tag-link:hover,
+.comment-reply-link:hover {
+  background-color: var(--main-color-light)!important;
+}
+
+.widget_recent_entries ul li a, 
+.widget_categories ul li a, 
+.widget_archive ul li a, 
+.widget_pages ul li a, 
+.widget_meta ul li a, 
+.widget_rss ul li a, 
+.widget_nav_menu ul li a, 
+.widget_block ul li a,
+.a-wrap,
+.tagcloud a ,
+.tag-link,
+.comment-reply-link {
+  color: var(--text-color-black);
+  background-color: var(--background);
+}
+
+.a-wrap:hover,
+.tagcloud a:hover,
+.tag-link:hover,
+.comment-reply-link:hover {
+  color: var(--text-color-black);
+}
+
+.post-navi-default.post-navi-border a {
+  border-top: 1px solid var(--cocoon-basic-border-color);
+  border-bottom: 1px solid var(--cocoon-basic-border-color);
+}
+
+.blogcard,
+.ecb-entry-border .entry-card-wrap,
+.page-numbers,
+.index-tab-buttons .index-tab-button,
+.border-square .a-wrap,
+.author-box {
+  border-color: var(--cocoon-basic-border-color);
+}
+
+.widget-entry-cards .a-wrap:first-of-type {
+  border-top: 1px solid var(--cocoon-basic-border-color);
+}
+
+.widget-entry-cards .a-wrap {
+  border-bottom: 1px solid var(--cocoon-basic-border-color);
+  margin: 0;
+}
+
+input[type=text], 
+input[type=password], 
+input[type=date], 
+input[type=datetime], 
+input[type=email], 
+input[type=number], 
+input[type=search], 
+input[type=tel], 
+input[type=time], 
+input[type=url], 
+textarea, 
+select, 
+.search-edit {
+  border: 2px solid var(--cocoon-x-thin-color);
+}
+
+.cat-label {
+  padding-top: 4px;
+  border: none;
+}
+
+.a-wrap .card-thumb {
+  overflow: hidden;
+}
+
+img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.a-wrap:hover .card-thumb img {
+  transform: scale(1.05);
+  transition-duration: 0.7s;
+}
+
+.read-time {
+  padding-top: 3px;
+}
+
+.timeline-box,
+.iconlist-box,
+.blank-box,
+.tab-caption-box,
+.tab-caption-box-content,
+.comment-btn,
+#submit,
+#comment {
+  color: var(--text-color-black);
+}
+
+#comment {
+  background-color: var(--background);
+}
+
+.block-box p {
+  padding-top: 3px;
+}
+
+.widget_recent_entries ul li a, 
+.widget_categories ul li a, 
+.widget_archive ul li a, 
+.widget_pages ul li a, 
+.widget_meta ul li a, 
+.widget_rss ul li a, 
+.widget_nav_menu ul li a, 
+.widget_block ul li a {
+  color: var(--text-color-black);
+  text-decoration: none;
+  padding: 10px 10px 8px 10px;
+}
+
+.carousel-in {
+  background-color: var(--background);
+}
+
+/***********************************************************
+  自分用
+***********************************************************/
+
+.logo-text {  /* 自分用 */
+  padding: 5px 0;
+}
+.site-name-text {  /* 自分用 */
+  font-family: 'Cherry Bomb One', var(--cocoon-default-font);
+  font-size: 50px;
+}
+
+.page-id-197 h1,
+.page-id-197 .date-tags,
+.page-id-2 .article-footer,
+.page-id-3 .article-footer,
+.page-id-108 .article-footer,
+.page-id-197 .article-footer,
+.page-id-199 .article-footer,
+.page-id-228 .article-footer,
+.page-id-289 .article-footer {
+  display: none;
+}
+
+/*
+.more-button {
+  background: var(--main-color);
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 50px!important;
+  border-radius: 2em;
+}
+
+.more-button a:hover {
+  background: var(--main-color-hover);
+  transition: .4s;
+}
+
+.more-button a {
+  color: var(--text-color-white);
+  display: block;
+  margin: 10px 0;
+  padding: .8em 1em;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+*/
+
+.page-id-197 p,
+.page-id-197 h2,
+.page-id-197 h3 {
+  margin-bottom: 1em!important;
+}
+
+#siteguard_captcha {
+  color: var(--text-color-black);
+}
+
+
+/***********************************************************
+  おためし
+***********************************************************/
+
+:root {
+  --white: red;/*#fff*/
+  --white_half: rgba(255, 255, 255, .5);
+  --white_A90: rgba(255, 255, 255, .9);
+  --LtGray_T0: #A5A4A3;
+  --LtGray_T30: #C0BFBF;
+  --LtGray_T50: #D2D2D1;
+  --LtGray_T70: #E4E4E3;
+  --LtGray_T90: #F6F6F6;
+  --LtGray_T70_A50: rgba(228, 228, 227, .5);
+  --LtBlue_S30: #778893;
+}
+
+:root {
+
+  /* Cocoon変数のスキンによる上書き *//*
+  --cocoon-text-color: var(--skin-grayish-site-name-txt);
+  --cocoon-black-color: var(--skin-grayish-site-name-txt);
+  --cocoon-basic-border-radius: 0px;*/
+  /* --cocoon-basic-border-color: var(--skin-grayish-site-main-hover); */
+  /*--cocoon-basic-border-color: var(--LtGray_T30);*/
+  --cocoon-three-d-border-colors: var(--skin-grayish-site-main-hover);
+  --cocoon-thin-color: var(--skin-grayish-site-main-thin);
+  /*--cocoon-x-pallid-text-color: var(--skin-grayish-a-wrap-txt);*/
+  /* 枠の角丸はなしにする *//*
+  --cocoon-badge-border-radius: 0;*/
+
+
+  /* モバイルヘッダーメニューが一つか複数かでレイアウト変更 js使用 初期値 */
+  --mobileHeaderMenu_justifySet: space-around;
+
+  /* トップページのヘッダーグローバルナビサイズ */
+  --topHeaderNavisize: 56px;
+  /* トップページのヘッダーグローバルナビ 背景色 */
+  --topHeaderNaviBgColor: var(--LtGray_T70_A50);
+
+  /* トップページ以外のヘッダーロゴサイズ */
+  --ohterHeaderLogosize: 56px;
+  /* トップページ以外のヘッダーグローバルナビ 背景色 */
+  --ohterHeaderBgColor: var(--LtGray_T70_A50);
+
+  /* モバイルヘッダメニュー　背景色 */
+  --mobileHeaderBgColor: var(--main-color);/*var(--white_half);*/
+
+  /* モバイルヘッダメニュー　Front専用　背景色 */
+  --mobileTopHeaderBgColor: var(--main-color);/*var(--white_half);*/
+
+  /* モバイルフッターメニュー　背景色 */
+  --mobileFooterBgColor: var(--main-color);/*var(--white_half);*/
+
+  /* safe area */
+  --safeareainsetleft: env(safe-area-inset-left);
+
+  /* フロントページ カテゴリーごとの疑似要素の表示 */
+  --listColumns_Category_displayOn: none;
+  --listColumns_Category_23cols: 0rem;
+
+  /* ヘッダーモバイルボタン　ロゴ以外でボタン一つのみの場合は幅を70px指定 */
+  /* フロントページ用 */
+  --mobileHeaderMenuBtn_width: 70px;
+  /* フロントページ以外用 */
+  --mobileHeaderMenuOtherBtn_width: 70px;
+
+}
+
+/***********************************************************
+  ブログカード
+***********************************************************/
+.blogcard-wrap {
+  width: 96%;
+}
+
+.blogcard-wrap:hover {
+  color: var(--text-color-black);
+  opacity: .7;
+}
+
+.blogcard-label {
+  color: var(--text-color-black);
+  font-size: 16px;
+  background-color: transparent;
+  border-radius: 0;
+  top: -1em;
+  text-shadow:  var(--background) 3px 0 0, 
+                var(--background) 2px 1px 0, 
+                var(--background) 2px 2px 0, 
+                var(--background) 2px 3px 0, 
+                var(--background) 1px 3px 0, 
+                var(--background) 0 3px 0, 
+                var(--background) -1px 3px 0, 
+                var(--background) -2px 2px 0, 
+                var(--background) -3px 1px 0, 
+                var(--background) -3px 0 0, 
+                var(--background) -3px -1px 0, 
+                var(--background) -3px -2px 0, 
+                var(--background) -2px -2px 0, 
+                var(--background) -1px -3px 0, 
+                var(--background) 0 -3px 0, 
+                var(--background) 1px -3px 0, 
+                var(--background) 2px -2px 0, 
+                var(--background) 2px -2px 0, 
+                var(--background) 3px -1px 0;
+}
+
+.blogcard {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 200px auto auto;
+  row-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+  border: solid 1px var(--main-color-border-light);
+  width: 100%;
+  padding: 1em;
+  position: relative;
+  background-color: var(--main-color-light);
+}
+
+.blogcard .blogcard-thumbnail {
+  grid-row: 1;
+  grid-column: 1;
+  width: 200px;
+  float: none;
+  margin: 0;
+}
+
+.blogcard .blogcard-content {
+  max-height: -moz-max-content;
+  max-height: max-content;
+  grid-row: 1;
+  grid-column: 2 / 4;
+  margin: 0;
+  position: relative;
+}
+
+.blogcard .blogcard-content .blogcard-snippet {
+  line-height: 1.4;
+  letter-spacing: .14em;
+  text-align: left;
+}
+
+.blogcard::before {
+  display: block;
+  content: "もっと読む";
+  color: var(--text-color-white);
+  font-size: 12px;
+  background-color: var(--main-color);
+  width: -moz-fit-content;
+  width: fit-content;
+  /* height: auto; */
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: .4em 2.4em;
+  position: relative;
+  bottom: 0;
+  grid-row: 2;
+  grid-column: 3;
+  align-self: flex-end;
+  justify-self: flex-end;
+  z-index: 1;
+}
+
+.blogcard::after,
+.blogcard-footer::after {
+  display: none;
+}
+
+.blogcard-footer {
+  font-size: .8em;
+  grid-row: 2;
+  grid-column: 1 / 3;
+  text-align: left;
+  align-self: end;
+}
+
+.blogcard .blogcard-favicon {
+  margin-top: 0;
+}
+
+.blogcard .blogcard-favicon img {
+  vertical-align: middle;
+}
+
+.blogcard .blogcard-site {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.blogcard .blogcard-date {
+  font-size: 10px;
+  color: var(--LtBlue_S30);
+  grid-row: 2;
+  grid-column: 1 / 4;
+  margin-top: 2px;
+}
+
+/* 外部カード */
+.blogcard.external-blogcard .blogcard-content::before {
+  bottom: -2.5rem;
+}
+
+.external-blogcard .blogcard-footer {
+  grid-column: 1 / 3;
+  margin-top: 1em;
+}
+
+/* 内部カード */
+.internal-blogcard {
+  grid-template-rows: auto auto auto;
+  row-gap: .7em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+}
+
+.internal-blogcard::before {
+  position: relative;
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.internal-blogcard .blogcard-date {
+  float: none;
+  justify-content: flex-end;
+}
+
+.internal-blogcard .blogcard-date .blogcard-post-date {
+  position: relative;
+}
+
+.internal-blogcard .blogcard-date .blogcard-post-date::before {
+  display: block;
+  content: "\f1da";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: -1.5em;
+  z-index: 1;
+}
+
+.internal-blogcard .blogcard-footer {
+  display: contents;
+}
+
+.internal-blogcard .blogcard-site {
+  grid-row: 3;
+  grid-column: 1 / 3;
+}
+
+
+
+/***********************************************************
+  ボタンブロック　角丸なし・アイコンnone
+  囲みボタン
+***********************************************************/
+.button-block .btn,
+.btn-wrap-block a {
+  color: var(--text-color-white);
+}
+
+
+
+/***********************************************************
+  archive-title
+***********************************************************/
+.archive-title {
+  font-size: 24px;
+  font-weight: 400;
+  padding: 8px 0;
+  border-bottom: double 3px var(--skin-grayish-site-main-hover);
+}
+
+/* タイトル前のアイコンフォント */
+.archive-title span {
+  color: var(--skin-grayish-site-sub-color);
+  margin-right: 4px;
+}
+
+.archive-title span::before {
+  font-size: .8em;
+}
+
+
+/***********************************************************
+  プロフィールボックス
+***********************************************************/
+.author-box {
+  display: grid;
+  grid-template-rows: 80px auto auto auto auto;
+  grid-template-columns: 1fr;
+  width: 100%;
+  padding: 2em 1em;
+  background-color: var(--background);
+  border: none;
+  border-radius: 0%;
+  position: relative;
+  line-height: 1.4 !important;
+}
+
+.author-box .author-widget-name {
+  color: var(--LtGray_T0);
+  font-size: 12px;
+  font-weight: 400;
+  grid-row: 3;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  margin-top: -1em;
+  padding-bottom: 1em;
+  overflow-wrap: anywhere;
+}
+
+
+.author-box .author-thumb {
+  float: none;
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: center;
+  width: 80px;
+  margin: 0;
+}
+
+.author-box .author-thumb img {
+  border-radius: 99%;
+  aspect-ratio: 1 / 1;
+}
+
+.author-box .author-content {
+  display: contents;
+  justify-self: center;
+}
+
+.author-box .author-name {
+  font-size: 16px;
+  grid-row: 2;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  /* text-align: left; */
+  margin-bottom: 0;
+  padding-top: 1em;
+  /* padding-bottom: 1em; */
+  text-align: center;
+  width: 100%;
+}
+
+.author-box .author-name a {
+  display: inline-block;
+  color: var(--skin-grayish-site-sub-color);
+  font-weight: normal;
+  text-decoration: none;
+  padding-bottom: 1em;
+  overflow-wrap: anywhere;
+}
+
+.author-box .author-name a:hover {
+  color: var(--skin-grayish-site-main-hover);
+  text-decoration: underline;
+}
+
+.author-box .author-description {
+  grid-row: 4;
+  grid-column: 1;
+  color: var(--skin-grayish-author-description-txt);
+  font-size: 14px;
+  border-top: 1px dashed var(--skin-grayish-site-main-hover);
+  margin-top: .5em;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.author-box .author-follows {
+  /* grid-row: 5;
+  grid-column: 1; */
+  padding-left: 0;
+  border-left: none;
+}
+
+.author-box p {
+  margin-top: .3em;
+  padding: 1em 0;
+  line-height: 1.7;
+  margin-bottom: 0 !important;
+  overflow-wrap: anywhere;
+}
+
+/***********************************************************
+  CTAボックス
+***********************************************************/
+.cta-box {
+  color: var(--skin-grayish-site-name-txt);
+  background-color: var(--LtGray_T70);
+}
+
+.cta-box .cta-heading {
+  font-weight: 400;
+}
+
+.cta-button .btn {
+  color: var(--skin-grayish-site-name-txt);
+  font-weight: 400;
+  background-color: var(--background);
+  border-radius: 0%;
+  border: solid 1px var(--LtGray_T30);
+}
+
+.cta-button .btn:hover {
+  color: var(--text-color-white);
+  background-color: var(--skin-grayish-cat-back);
+  border: solid 1px var(--skin-grayish-cat-back);
+}
+
+.cta-button .btn::after {
+  display: none;
+}
+
+/***********************************************************
+  他
+***********************************************************/
+
+/* ブログカード 縦表示 Cocoonレイアウトブロック使用時2,3も + WPコア カラム・メディアとテキストも対象とする */
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard {
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  row-gap: 1em;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+  text-align: center;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard::before,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard::before,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard::before,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard::before,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard::before {
+  width: 100%;
+  padding: .6em 0;
+  grid-row: 4;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content::before,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-content::before,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content::before,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content::before,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content::before {
+  font-size: min(3.125vw, 12px);
+  min-height: 0vw;
+  padding: .4em 2em;
+  bottom: -10px;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-thumbnail,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-thumbnail,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-thumbnail,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-thumbnail,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-thumbnail {
+  width: 100%;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-content,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content {
+  grid-row: 2;
+  grid-column: 1;
+  text-align: left;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-title,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-title,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-title,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-title,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-title {
+  font-size: 1.0em;
+  line-height: 1.4;
+  margin-bottom: 10px;
+
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-footer,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-footer,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-footer,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.external-blogcard .blogcard-footer,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.external-blogcard .blogcard-footer {
+  grid-row: 3;
+  grid-column: 1;
+  margin-top: 0;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.external-blogcard .blogcard-site,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.external-blogcard .blogcard-site,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.external-blogcard .blogcard-site,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.external-blogcard .blogcard-site,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.external-blogcard .blogcard-site {
+  margin-top: 0;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-date,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-date,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-date,
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-domain,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-domain,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-domain,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-date,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-domain,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-date,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-domain {
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.internal-blogcard,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard {
+  grid-template-rows: auto auto auto auto;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard::before,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.internal-blogcard::before,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard::before,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard::before,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard::before {
+  grid-row: 5;
+  grid-column: 1;
+  justify-self: center;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard .blogcard-footer .blogcard-date,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard .blogcard-footer .blogcard-date {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard.internal-blogcard .blogcard-footer .blogcard-site,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard.internal-blogcard .blogcard-footer .blogcard-site {
+  grid-row: 4;
+  grid-column: 1;
+  margin-bottom: 0;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard .blogcard-content .blogcard-snippet,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard .blogcard-content .blogcard-snippet,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard .blogcard-content .blogcard-snippet {
+  font-size: .8em;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard-label,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard-label,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard-label,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard-label,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard-label {
+  font-size: 12px;
+  left: .6em;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .blogcard-footer,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .blogcard-footer,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .blogcard-footer,
+:where(.footer-widgets, #sidebar, .sidebar-menu-content) .blogcard-footer,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .blogcard-footer {
+  text-align: left;
+}
+
+/* プロフィールボックス　エディタでカラム、インデックスミドルウィジェット時など縦表示にする */
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box,
+.footer .author-box,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box {
+  display: grid;
+  grid-template-rows: 100px auto auto auto auto !important;
+  grid-template-columns: 1fr !important;
+  -moz-column-gap: 0 !important;
+  column-gap: 0 !important;
+  width: 100% !important;
+  padding: 2em 1em !important;
+  background-color: var(--white) !important;
+  border: none !important;
+  border-radius: 0% !important;
+  position: relative !important;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-widget-name,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-widget-name,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-widget-name,
+.footer .author-box .author-widget-name,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-widget-name {
+  color: var(--LtGray_T0);
+  font-size: 12px;
+  grid-row: 3 !important;
+  grid-column: 1 !important;
+  align-self: center !important;
+  justify-self: center !important;
+  margin-top: -1em !important;
+  padding-top: 0 !important;
+  padding-bottom: 1.2em !important;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-thumb,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-thumb,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-thumb,
+.footer .author-box .author-thumb,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-thumb {
+  float: none;
+  grid-row: 1 !important;
+  grid-column: 1 !important;
+  justify-self: center !important;
+  width: 80px !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-thumb img,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-thumb img,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-thumb img,
+.footer .author-box .author-thumb img,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-thumb img {
+  border-radius: 99%;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-content,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-content,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-content,
+.footer .author-box .author-content,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-content {
+  display: contents;
+  justify-self: center;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-name,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name,
+.footer .author-box .author-name,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name {
+  font-size: 16px;
+  grid-row: 2 !important;
+  grid-column: 1 !important;
+  align-self: flex-start !important;
+  justify-self: center !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name a,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-name a,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name a,
+.footer .author-box .author-name a,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name a {
+  color: var(--skin-grayish-site-sub-color);
+  font-weight: normal;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-name a:hover,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-name a:hover,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-name a:hover,
+.footer .author-box .author-name a:hover,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-name a:hover {
+  color: var(--skin-grayish-site-main-hover);
+  text-decoration: underline;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-description,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-description,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-description,
+.footer .author-box .author-description,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-description {
+  grid-row: 4 !important;
+  grid-column: 1 !important;
+  color: var(--skin-grayish-author-description-txt);
+  font-size: 14px !important;
+  border-top: 1px dashed var(--skin-grayish-site-main-hover) !important;
+  border-left: 0 !important;
+  margin-top: .5em !important;
+  margin-bottom: 0 !important;
+  padding: 1em 0 0 0 !important;
+  position: relative !important;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box .author-follows,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box .author-follows,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box .author-follows,
+.footer .author-box .author-follows,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box .author-follows {
+  /* for editor */
+  grid-row: 5 !important;
+  grid-column: 1 !important;
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+
+:where(.front-page-type-index, .front-page-type-tab-index) .widget-index-middle .author-box p,
+.skin-grayish:not(.front-top-page).blog .widget-index-middle .author-box p,
+.skin-grayish:where(.archive, .search) .ect-vertical-card .widget-index-middle .author-box p,
+.footer .author-box p,
+:is(.wp-block-cocoon-blocks-column-2, .wp-block-cocoon-blocks-column-3, .wp-block-columns, .wp-block-media-text) .author-box p {
+  margin-top: .3em !important;
+  padding: 0 0 1.5em 0 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+
+
+/* ウィジット等の横並び Swiperのボタン */
+.is-list-horizontal .swiper-button-next, .is-list-horizontal .swiper-button-prev {
+  background-color: var(--skin-grayish-site-main-hover);
+  opacity: .8;
+}
+
+/*============== Widget Main : LargeSize ==============*/
+/* Profileボックス*/
+:where(.main, .content-bottom, .content-top) .author-box .author-content {
+  margin-left: 0;
+}
+
+
+/*============== Widget Contents Bottom : LargeSize ==============*/
+/* フッター上のコンテンツ下ウィジット */
+/*-------------- Front --------------*/
+.content-bottom {
+  margin: 0;
+}
+
+/* コンテンツ下部 コンテンツ上部*/
+.content-bottom .content-bottom-in,
+.content-top .content-top-in {
+  padding: 0 28px;
+}
+
+.content-bottom .widget-content-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+/* コンテンツ下部タイトル */
+.content-bottom .widget-content-bottom-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* コンテンツ下部人気記事 トップ */
+.skin-grayish.front-top-page .content-bottom .widget_popular_entries {
+  padding-top: 4.5rem;
+}
+
+/* コンテンツ下部人気記事 */
+.content-bottom .widget_popular_entries {
+  padding-top: 3.5rem;
+}
+
+/* コンテンツ下部人気記事 ランキングを表示した場合のスタイル調整 */
+.widget-entry-cards.ranking-visible .card-thumb::before {
+  font-size: .8em;
+  letter-spacing: 0;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  padding: 0;
+}
+
+/* コンテンツ下部Profileボックス */
+.content-bottom .widget_author_box,
+.content-top .widget_author_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 2rem 0 6rem;
+  position: relative;
+}
+
+.content-top .widget_author_box {
+  padding: 2rem 0 2rem;
+}
+
+
+.content-bottom .widget_author_box .author-box {
+  margin-top: 5rem;
+}
+
+.content-bottom .widget_author_box h2+.author-box {
+  margin-top: 0;
+}
+
+.content-bottom .widget_author_box::before,
+.content-bottom .widget_author_box::after {
+  display: block;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100%;
+  margin: 0 calc(50% - 50vw);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+}
+
+.content-bottom .widget_author_box::after {
+  background-image: none;
+  background-color: var(--white);
+  opacity: .5;
+  z-index: -1;
+
+}
+
+:where(.main, .content-bottom, .content-top) .author-box {
+  display: grid;
+  place-content: center;
+  grid-template-rows: auto auto;
+  grid-template-columns: minmax(auto, 180px) minmax(500px, 1fr);
+  row-gap: 0;
+  -moz-column-gap: 2.5em;
+  column-gap: 2.5em;
+  background-color: var(--white_A90);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 4em;
+  margin-bottom: 0;
+  position: relative;
+}
+
+:where(.content-top) .author-box {
+  grid-template-columns: minmax(auto, 150px) 1fr;
+  width: 100%;
+  background-color: var(--background);
+
+}
+
+:where(.main) .author-box {
+  grid-template-columns: minmax(auto, 150px) 1fr;
+  padding: 2em;
+  background-color: var(--background);
+  width: 100%;
+}
+
+
+:where(.main, .sidebar, .content-top) .author-box::before, .author-box::after {
+  display: block;
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  z-index: 1;
+}
+
+:where(.main, .sidebar, .content-top) .author-box::before {
+  border-left: solid 1px var(--LtGray_T30);
+  border-top: solid 1px var(--LtGray_T30);
+  top: 0;
+  left: 0;
+}
+
+:where(.main, .sidebar, .content-top) .author-box::after {
+  border-right: solid 1px var(--LtGray_T30);
+  border-bottom: solid 1px var(--LtGray_T30);
+  bottom: 0;
+  right: 0;
+}
+
+
+:where(.main, .content-bottom, .content-top) .author-box p {
+  padding: 0 0 1.5em 0;
+}
+
+:where(.main, .content-bottom, .content-top) .author-box .author-follows {
+  padding-left: 0rem;
+  border-left: 0 dashed var(--skin-grayish-site-main-hover);
+  grid-row: 3;
+  grid-column: 2;
+}
+
+
+
+:where(.main, .content-bottom, .content-top) .author-box .author-widget-name {
+  color: var(--LtGray_T0);
+  font-size: 12px;
+  grid-column: 1;
+  justify-self: center;
+  align-self: flex-start;
+  margin-top: -1em;
+  grid-row: 2 / span 1;
+}
+
+:where(.main, .content-bottom, .content-top) .author-box .author-thumb {
+  width: 100px;
+  float: none;
+  margin-top: 0;
+  margin-right: 0;
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: center;
+  align-self: flex-start;
+}
+
+:where(.main, .content-bottom, .content-top) .author-box .author-content {
+  display: contents;
+}
+
+:where(.main, .content-bottom, .content-top) .author-box .author-content .author-name {
+  align-self: flex-start;
+  grid-row: 1;
+  grid-column: 1;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 120px;
+  padding-bottom: 0;
+}
+
+:where(.main, .content-bottom, .content-top) .author-box .author-content .author-description {
+  text-align: left;
+  border-top: none;
+  border-left: 1px dashed var(--skin-grayish-site-main-hover);
+  margin: 0;
+  padding-left: 2rem;
+  grid-row: 1/3;
+  grid-column: 2;
+}
+
+/* content-bottomのプロフィールボックスの直後のウィジェットにのみ余白 */
+.content-bottom .widget_author_box+.widget-content-bottom {
+  padding-top: 2.5rem;
+}
+
+/* content-bottomのプロフィールボックスの直後のウィジェットが人気記事の場合は多めの余白 */
+.content-bottom .widget_author_box+.widget-content-bottom.widget_popular_entries {
+  padding-top: 4.5rem;
+}
+
+/* Front content-bottomの最初がプロフィールボックス以外のときは上に余白が必要 */
+.skin-grayish.front-top-page .content-bottom .content-bottom-in .widget-content-bottom:first-child:not(.widget_author_box) {
+  padding-top: 2.5rem;
+}
+
+/* Front content-bottomの最初が人気記事の場合は多めの余白が必要 */
+.skin-grayish.front-top-page .content-bottom .content-bottom-in .widget-content-bottom:first-child.widget_popular_entries {
+  padding-top: 4.5rem;
+}
+
+
+/*480px以下*/
+@media screen and (max-width: 480px) {
+
+  /* アイコンbox */
+  :is(.is-style-information-box, .information-box, .information)::before,
+  :is(.is-style-question-box, .question-box, .question)::before,
+  :is(.is-style-alert-box, .alert-box, .alert)::before,
+  :is(.is-style-memo-box, .memo-box)::before,
+  :is(.is-style-comment-box, .comment-box)::before,
+  :is(.is-style-ok-box, .ok-box)::before,
+  :is(.is-style-good-box, .good-box)::before,
+  :is(.is-style-ng-box, .ng-box)::before,
+  :is(.is-style-bad-box, .bad-box)::before,
+  :is(.is-style-profile-box, .profile-box)::before {
+    left: 1em;
+  }
+
+
+  /* タイムライン */
+  .timeline-box .timeline {
+    padding-left: 0;
+  }
+
+  .timeline>li.timeline-item {
+    border-left: none;
+  }
+
+  .timeline-box .timeline-item {
+    padding-left: .8em;
+  }
+
+  .timeline-box .timeline-item:before {
+    left: .55em;
+
+  }
+
+  .timeline-box .timeline-item-label {
+    padding-top: .65em;
+    padding-left: 1rem;
+  }
+
+  .timeline-box .timeline-item-content {
+    padding-left: 1rem;
+  }
+
+
+  /******* header *******/
+  .skin-grayish:not(.front-top-page) .logo-text {
+    padding: .7rem;
+  }
+
+  .skin-grayish:not(.front-top-page) #header .site-name-text {
+    font-size: 16px;
+  }
+
+  .navi-footer-in>.menu-footer li.menu-item {
+    width: auto;
+  }
+
+
+  .blogcard .blogcard-content::before {
+    font-size: min(3.125vw, 12px);
+    min-height: 0vw;
+    padding: .4em 2em;
+    bottom: -10px;
+  }
+
+  .blogcard.external-blogcard .blogcard-content::before {
+    bottom: -1.5rem;
+  }
+
+
+  .external-blogcard .blogcard-footer {
+    grid-row: 3;
+    grid-column: 1;
+    margin-top: 0;
+  }
+
+  .external-blogcard .blogcard-site {
+    margin-top: 0;
+  }
+
+
+  .blogcard.internal-blogcard::before {
+    grid-row: 5;
+    grid-column: 1;
+    justify-self: center;
+  }
+
+  .blogcard.internal-blogcard .blogcard-footer .blogcard-date {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  .blogcard.internal-blogcard .blogcard-footer .blogcard-site {
+    grid-row: 4;
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+
+  /* .blogcard .blogcard-content .blogcard-snippet {
+    font-size: 10px;
+  } */
+
+  .blogcard-label {
+    font-size: 12px;
+    left: .6em;
+  }
+
+  .tnt-none .toc-list>li>a:before {
+    top: .97em;
+  }
+
+}

@@ -1,0 +1,155 @@
+美しい表のデザインに関する研究
+
+[ パンくずリスト ]
+
+ホーム	> 高校数学		> 数学Ⅰ	> 数と式				>
+						> 図形と計量				>
+						> 二次関数				>
+						> データの分析				>
+				> 数学Ⅱ	> いろいろな式				>
+						> 図形と方程式				>
+						> 指数関数・対数関数			>
+						> 三角関数				>
+						> 微分・積分の考え			>
+				> 数学Ⅲ	> 極限					>
+						> 微分法				>
+						> 積分法				>
+				> 数学Ａ	> 図形の性質				>
+						> 場合の数と確率			>
+						> 数学と人間の活動（整数の性質を含む）	>
+				> 数学Ｂ	> 数列					>
+						> 統計的な推測				>
+						> 数学と社会生活			>
+				> 数学Ｃ	> ベクトル				>
+						> 平面上の曲線と複素数平面		>
+						> 数学的な表現の工夫			>
+	> 情報			> 
+	> 音楽理論		> 
+	> プログラミング	> LaTeX		>
+	> 資格・検定		> 漢字検定	> 漢検準１級ランダム模試
+				> 色彩検定	> 色彩検定UC級の勉強法
+				> 教員免許	>
+				> 司書資格	>
+	> 図書館学		> 
+	> 本・サイト紹介	> 
+	> 雑談			> みむねこのーと開設理念
+	> その他		> 
+
+
+
+
+[ ディレクトリ ]
+
+(root)	/ math			/ math-1
+				/ math-2
+				/ math-3
+				/ math-a
+				/ math-b
+				/ math-c
+	/ informatics
+	/ music-theory
+	/ programming		/ latex			/
+	/ qualification		/ kanken		/ semi-1-mock-exam	/ index.html
+										/ assets/ .csv
+										/ js	/ buttonAction.js
+											/ RandomizedQu...
+				/ aft	/
+				/ teaching-license		/
+				/ certiﬁcation-of-librarian	/
+	/ library-science
+	/ recommendation
+	/ chat
+	/ others
+	/ category-list		/ index.html
+	/ tag-list		/ index.html
+index.html
+404.html
+	/ _css	/ 
+	/ _js	/ 
+	/ _img	/ 
+
+
+
+[ カテゴリ ]（書架分類）
+
+パンくずリストのうち、最上位と最下位以外
+カテゴリ一覧には記事数と開閉できるリスト
+
+
+
+
+[ タグ ]（書誌分類）
+
+パンくずリストにあるものも、ないものも。
+パンくずリストを見なくてもアクセスできるように
+
+
+
+
+[WordPress標準デザイン講座]
+duplicate post 複製できる
+mypace custom title tag タイトルを自由に変えられる
+　wp featherlight - a simple jquery lightbox 画像クリック時にlightbox
+disable gutenberg blocks ブロック非表示
+regenerate thumbnails 画像サイズを規定サイズに調整
+intuitive custom post order 投稿の順番を並び替える
+　gutenberg blocks - ultimate addons for gutenberg それっぽいブロック追加
+
+
+
+
+[https://www.xserver.ne.jp/blog/wordpress-plugin-recommend/?utm_source=yahoo&utm_medium=cpc&utm_campaign=DAS_blog&utm_term=&yclid=YSS.1000024944.EAIaIQobChMIhMiS_a_AgwMV4g17Bx1UNAhKEAAYASAAEgICyfD_BwE]
+Contact Form 7は、WordPressで問い合わせフォームを作成できるプラグインです。
+EWWW Image Optimizerは、WordPressにアップロードする画像を自動で圧縮するツールです。
+XML Sitemapsは、「xmlサイトマップ」を作成するためのプラグインです。
+Invisible reCaptcha for WordPressは、スパムコメント対策用のプラグインです。
+BackWPupは、ブログのバックアップを取るためのプラグインです。
+Broken Link Checkerは、自分の記事からリンク切れが発生していないか自動でチェックを行うプラグインです。
+Site Kit by Googleは、「サーチコンソール」や「アナリティクス」など、Google公式ツールとWordPressを簡単に連携できる公式プラグインです。
+Table of Contents Plusは、目次を自動的に生成するツールです。
+WordPress Popular Postsは、WordPress内に「人気記事」をランキング形式で表示するためのプラグインです。
+Flexible Table Blockは、テーブル表の機能を簡単に拡張できるプラグインです。
+
+
+
+
+[https://wp-cocoon.com/recommended-plugins/]
+Akismet Anti-Spam スパムコメントをある程度自動除去してくれるプラグインです。WordPressサイトを運営する上では必需品。
+Category Order and Taxonomy Terms Order カテゴリの順番を並び替えることができるプラグイン。やはり、重要なカテゴリは上に表示させた方が効果的。
+Wordfence Security WordPressのファイヤーウォール＆マルウェアのスキャンソフト。とりあえずインストールしておくだけでも、ある程度攻撃からサイトを守ってくれます。
+SiteGuard WP Plugin 管理ページとログインページの保護を主な目的とする、WordPress向けのシンプルなセキュリティプラグインです。
+Edit Author Slug 投稿者アーカイブのURLを変更することで、ログインユーザー名を攻撃者に知られるのを防止するプラグインです。
+SNS Count Cache :Cocoonは、SNS Count Cacheプラグインをインストールするだけで、対応できます。
+
+
+
+
+[https://www.valuecommerce.ne.jp/stepup/wordpress-plugin]
+「Jetpack」は、WordPressのサイトの安全性を高め、高速化し、トラフィックを増やすためのプラグインです。
+「SiteGuard」は、セキュリティーを強化してくれるプラグインです。
+「Smart Slider 3」は、サイト内にスライダーやスライドショーを作成してくれるプラグインです。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
