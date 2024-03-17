@@ -1,5 +1,5 @@
 # Kiss-Skins
-WordpressテーマCocoon用オリジナルスキン「Kiss」シリーズ
+Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「Kiss」シリーズ
 
 # ラインナップ
 - Kiss-Blue
