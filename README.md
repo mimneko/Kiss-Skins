@@ -3,15 +3,43 @@ Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 各ディレクトリにファイルを置いています。
 
 # ラインナップ（全10種）
+- Kiss-Red
+- Kiss-Green
 - Kiss-Blue
-- 
-- Kiss-Red(#db1d1d)
-- Kiss-Green(#226b07)
-- Kiss-Blue(#144999)
-- Kiss-Yellow(#ffa621)
-- Kiss-Purple(#71188f)
-- Kiss-Pink(#fe6aa2)
-- Kiss-Orange(#e86b16)
-- Kiss-Brown(#780b0b)
-- Kiss-Gray(#6e6e6e)
-- Kiss-Black(#333)
+- Kiss-Yellow
+- Kiss-Purple
+- Kiss-Pink
+- Kiss-Orange
+- Kiss-Brown
+- Kiss-Gray
+- Kiss-Black
+
+## Kiss-Red
+
+
+## Kiss-Green
+
+
+## Kiss-Blue
+![ここには代替テキスト。右には画像URL](https://kaiunillust.com/wp-content/uploads/2018/07/turineko.jpg)
+
+## Kiss-Yellow
+
+
+## Kiss-Purple
+
+
+## Kiss-Pink
+
+
+## Kiss-Orange
+
+
+## Kiss-Brown
+
+
+## Kiss-Gray
+
+
+## Kiss-Black
+
