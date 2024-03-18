@@ -6,16 +6,16 @@ Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 1. ダークモード対応
 
 # ラインナップ（全10種）
-- Kiss-Red
-- Kiss-Green
+- [Kiss-Red](#Kiss-Red)
+- [Kiss-Green](#Kiss-Green)
 - [Kiss-Blue](#Kiss-Blue)
-- Kiss-Yellow
-- Kiss-Purple
-- Kiss-Pink
-- Kiss-Orange
-- Kiss-Brown
-- Kiss-Gray
-- Kiss-Black
+- [Kiss-Yellow](#Kiss-Yellow)
+- [Kiss-Purple](#Kiss-Purple)
+- [Kiss-Pink](#Kiss-Pink)
+- [Kiss-Orange](#Kiss-Orange)
+- [Kiss-Brown](#Kiss-Brown)
+- [Kiss-Gray](#Kiss-Gray)
+- [Kiss-Black](#Kiss-Black)
 
 ## Kiss-Red
 > [!NOTE]
