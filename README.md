@@ -4,6 +4,7 @@ Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 # 特長
 1. シンプルで機能的なデザイン
 1. ダークモード対応
+2. 好みに合わせて10色から選べる
 
 # ラインナップ（全10種）
 - [Kiss-Red](#Kiss-Red)
