@@ -8,7 +8,7 @@ Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 # ラインナップ（全10種）
 - Kiss-Red
 - Kiss-Green
-- Kiss-Blue
+- [Kiss-Blue](#Kiss-Blue)
 - Kiss-Yellow
 - Kiss-Purple
 - Kiss-Pink
