@@ -6,7 +6,7 @@ WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 2. ダークモード対応
 3. 好みに合わせて10色から選べる
 
-# ラインナップ（全10種）
+# ラインナップ（全10色）
 - [Kiss-Red](#Kiss-Red)
 - [Kiss-Green](#Kiss-Green)
 - [Kiss-Blue](#Kiss-Blue)
