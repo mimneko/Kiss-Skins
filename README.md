@@ -1,5 +1,6 @@
 # Kiss-Skins
 Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「Kiss」シリーズ。
+各ディレクトリからダウンロードしてください。
 
 # 特徴
 1. シンプルで機能的なデザイン
