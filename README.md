@@ -1,7 +1,7 @@
 # Kiss-Skins
 Wordpressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「Kiss」シリーズ。
 
-# 特徴
+# 特長
 1. シンプルで機能的なデザイン
 1. ダークモード対応
 
