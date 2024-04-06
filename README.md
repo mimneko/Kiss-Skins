@@ -79,5 +79,11 @@ WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 
 ![Kiss-Blackサンプル](thumbnails/Screen-Shot-Kiss-Black.png)
 
-# 更新
+# 制作環境
+
+
+# おすすめCocoon設定
+
+
+# 更新履歴
 - 2024/03/17 リポジトリ作成
