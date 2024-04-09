@@ -1,5 +1,4 @@
 # Kiss-Skins
----
 WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「Kiss」シリーズ。
 
 [ダウンロード](https://github.com/mimneko/Kiss-Skins/archive/main.zip)
@@ -35,7 +34,7 @@ WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 ## Kiss-Blue
 青色を基調としたスキン
 
-["Kiss-Blue"をダウンロード](https://github.com/mimneko/Kiss-Blue/archive/main.zip)
+["Kiss-Blue"をダウンロード](dl-blue)
 
 ![Kiss-Blueサンプル](thumbnails/Screen-Shot-Kiss-Blue.png)
 
@@ -74,6 +73,9 @@ WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 
 ![Kiss-Blackサンプル](thumbnails/Screen-Shot-Kiss-Black.png)
 
+# ダウンロード
+["Kiss-Blue"をダウンロード](dl-blue)
+
 # 制作環境
 
 
@@ -82,3 +84,5 @@ WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 
 # 更新履歴
 - 2024/03/17 リポジトリ作成
+
+[dl-blue]: https://github.com/mimneko/Kiss-Blue/archive/main.zip
