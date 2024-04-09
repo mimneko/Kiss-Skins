@@ -1,6 +1,8 @@
 # Kiss-Skins
 WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「Kiss」シリーズ。
 
+[ダウンロード](https://github.com/mimneko/Kiss-Skins/archive/main.zip)
+
 # 特長
 - シンプルで機能的
 - 統一感の作り出す美しさ
