@@ -4,8 +4,6 @@ WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 
 [ダウンロード](https://github.com/mimneko/Kiss-Skins/archive/main.zip)
 
-["Kiss-Blue"をダウンロード](https://github.com/mimneko/Kiss-Blue/archive/main.zip)
-
 # 特長
 - シンプルで機能的
 - 統一感の作り出す美しさ
@@ -36,6 +34,8 @@ WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 
 ## Kiss-Blue
 青色を基調としたスキン
+
+["Kiss-Blue"をダウンロード](https://github.com/mimneko/Kiss-Blue/archive/main.zip)
 
 ![Kiss-Blueサンプル](thumbnails/Screen-Shot-Kiss-Blue.png)
 
