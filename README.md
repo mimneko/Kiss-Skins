@@ -10,7 +10,7 @@ WordPressテーマ[Cocoon](https://wp-cocoon.com/)用オリジナルスキン「
 # ラインナップ（全10色）
 - [Kiss-Red](#Kiss-Red)
 - [Kiss-Green](#Kiss-Green)
-- [Kiss-Blue](#Kiss-Blue)
+- [Kiss-Blue](#kiss-blue)
 - [Kiss-Yellow](#Kiss-Yellow)
 - [Kiss-Purple](#Kiss-Purple)
 - [Kiss-Pink](#Kiss-Pink)
